@@ -5,14 +5,12 @@ export default function MapGEO(props) {
 
     function getColour(d) {
 
-        return d > 21 ? '#084594' :
-            d > 18 ? '#2171b5' :
-                d > 15 ? '#4292c6' :
-                    d > 12 ? '#6baed6' :
-                        d > 9 ? '#9ecae1' :
-                            d > 6 ? '#c6dbef' :
-                                d > 3 ? '#deebf7' :
-                                    '#f7fbff';
+        return d > 20 ? '#452136' :
+            d > 16 ? '#994877' :
+                d > 12 ? '#BE749F' :
+                    d > 8 ? '#D8ACC5' :
+                        d > 4 ? '#EBD5E2' :
+                                    '#ffffff';
     }
 
     function style(constituency){

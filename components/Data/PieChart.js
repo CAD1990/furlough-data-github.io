@@ -29,6 +29,29 @@ export default function MyResponsivePie({ data }) {
 
     console.log(json)
 
+    const CenteredMetric = ({ dataWithArc, centerX, centerY }) => {
+        let total = 0
+        dataWithArc.forEach(datum => {
+            total += datum.value
+        })
+
+        return (
+            
+            <text
+                x={centerX}
+                y={centerY}
+                textAnchor="middle"
+                dominantBaseline="central"
+                style={{
+                    fontSize: '40px',
+                    fontWeight: '600',
+                }}
+            >
+                {total}
+            </text>
+        )
+    }
+
 
 
 
@@ -45,19 +68,19 @@ export default function MyResponsivePie({ data }) {
             cornerRadius={3}
             activeOuterRadiusOffset={8}
             borderWidth={1}
-            borderColor={{ from: 'color', modifiers: [['darker', 0.2]] }}
+            borderColor={{ from: 'color'}}
             arcLinkLabelsSkipAngle={10}
             arcLinkLabelsTextColor="#333333"
             arcLinkLabelsThickness={2}
             arcLinkLabelsColor={{ from: 'color' }}
             arcLabelsSkipAngle={10}
-            arcLabelsTextColor={{ from: 'color', modifiers: [['darker', 2]] }}
+            arcLabelsTextColor={"#ffffff"}
             defs={[
                 {
                     id: 'dots',
                     type: 'patternDots',
-                    background: 'inherit',
-                    color: 'rgba(255, 255, 255, 0.3)',
+                    background: '#00a7b5',
+                    color: '#00a7b5',
                     size: 4,
                     padding: 1,
                     stagger: true
@@ -65,8 +88,8 @@ export default function MyResponsivePie({ data }) {
                 {
                     id: 'lines',
                     type: 'patternLines',
-                    background: 'inherit',
-                    color: 'rgba(255, 255, 255, 0.3)',
+                    background: '#888B8D',
+                    color: '#888B8D',
                     rotation: -45,
                     lineWidth: 6,
                     spacing: 10
@@ -77,7 +100,7 @@ export default function MyResponsivePie({ data }) {
                     match: {
                         id: "Female Workers Furloughed"
                     },
-                    id: 'dots'
+                    id: 'lines'
                 },
                 {
                     match: {
@@ -110,8 +133,17 @@ export default function MyResponsivePie({ data }) {
                         }
                     ]
                 }
-            ]}
+            ]} 
+            innerRadius={0.6}
+            enableSliceLabels={false}
+            radialLabel={d => `${d.id} (${d.formattedValue})`}
+            activeInnerRadiusOffset={8}
+            layers={['arcs', 'arcLabels', 'arcLinkLabels', 'legends', CenteredMetric]}
         />
 
     )
 }
+
+
+
+

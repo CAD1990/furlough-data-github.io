@@ -1,14 +1,18 @@
 html, body {
   margin: 0;
   height: 100%;
+  
 }
 html,
 body {
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  
 }
-
+a, p, h1, h2, h3, html, body{
+  font-family: rockwell,sans-serif;
+font-weight: 400;
+font-style: normal;
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -22,12 +26,16 @@ a {
 }
 .Tab-Body{
   height: 100%;
+
 }
 .tab-content{
-  margin: 20px;
+  margin-top: 50x;
   height: 100%;
 
 }
 .graph-body{
-  height: 50vh;
+  height: 75vh;
+  margin: 20px;
+
+
 }

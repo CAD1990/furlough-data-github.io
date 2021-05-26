@@ -46,7 +46,7 @@ export default function MyResponsiveBar({ data }) {
                 data={json}
             keys={["Not Furloughed", "Furloughed"]}
                 indexBy="id"
-                margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+                margin={{ top: 50, right: 60, bottom: 100, left: 60 }}
                 padding={0.3}
                 valueScale={{ type: 'linear' }}
                 indexScale={{ type: 'band', round: true }}
@@ -102,22 +102,22 @@ export default function MyResponsiveBar({ data }) {
                     tickRotation: 0,
                     legend: 'No. Workers',
                     legendPosition: 'middle',
-                    legendOffset: -40
+                    legendOffset: -55
                 }}
                 labelSkipWidth={12}
                 labelSkipHeight={12}
-                labelTextColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
+                labelTextColor={'#ffffff'}
                 legends={[
                     {
                         dataFrom: 'keys',
-                        anchor: 'bottom-right',
-                        direction: 'column',
-                        justify: false,
-                        translateX: 120,
-                        translateY: 0,
-                        itemsSpacing: 2,
+                        anchor: 'bottom',
+                        direction: 'row',
+                        justify: true,
+                        translateX: 50,
+                        translateY: 80,
+                        itemsSpacing: 10,
                         itemWidth: 100,
-                        itemHeight: 20,
+                        itemHeight: 0,
                         itemDirection: 'left-to-right',
                         itemOpacity: 0.85,
                         symbolSize: 20,
