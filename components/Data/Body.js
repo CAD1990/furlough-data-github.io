@@ -46,8 +46,9 @@ export default function Body(props) {
     return (
         <div className="body">
             <Card style={{ width: '100%' }}>
-                <Card.Body><MapGEO geojson={props.body} onChange={(value) => setTabState({ constituency: value }, setAvailableData(true))} /></Card.Body>
                 <TitleAuth />
+                <Card.Body><MapGEO geojson={props.body} onChange={(value) => setTabState({ constituency: value }, setAvailableData(true))} /></Card.Body>
+                
                 <Card.Footer style={{height: '100%'}}><TabAuth /></Card.Footer>
 
             </Card>

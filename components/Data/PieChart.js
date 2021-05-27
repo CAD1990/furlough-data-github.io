@@ -43,11 +43,11 @@ export default function MyResponsivePie({ data }) {
                 textAnchor="middle"
                 dominantBaseline="central"
                 style={{
-                    fontSize: '40px',
+                    fontSize: '6vh',
                     fontWeight: '600',
                 }}
             >
-                {total}
+                Total: {total}
             </text>
         )
     }

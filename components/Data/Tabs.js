@@ -10,12 +10,12 @@ export default function FooterTab(props) {
     const renderTabs = (data, index) => {
 
         const results = [
-            <Tab eventKey={"Eligible"} title={"Furlough vs Non Furlough"}>
+            <Tab eventKey={"Eligible"} title={"Overview"}>
                 <div className="graph-body">
                     <MyResponsiveBar data={data} />
                 </div>
             </Tab>,
-            <Tab eventKey={"Gender"} title={"Furlough by Gender"}>
+            <Tab eventKey={"Gender"} title={"Gender"}>
                 <div className="graph-body">
                     <MyResponsivePie data={data} />
                 </div>

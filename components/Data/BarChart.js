@@ -18,14 +18,19 @@ export default function MyResponsiveBar({ data }) {
         const femaleNoFurlough = (properties.Eligible["Female"] - properties.Female["Employments Furloughed"])
         json.push(
             {
-                "id": "Total Male Workers",
+                "id": "Male Workers",
                 "Not Furloughed": maleNoFurlough,
                 "Furloughed": properties.Male["Employments Furloughed"]
             },
             {
-                "id": "Total Female Workers",
+                "id": "Female Workers",
                 "Not Furloughed": femaleNoFurlough,
                 "Furloughed": properties.Female["Employments Furloughed"]
+            },
+            {
+                "id": "All Workers",
+                "Not Furloughed": (maleNoFurlough + femaleNoFurlough),
+                "Furloughed": (properties.Male["Employments Furloughed"] + properties.Female["Employments Furloughed"])
             })
 
 
@@ -46,7 +51,7 @@ export default function MyResponsiveBar({ data }) {
                 data={json}
             keys={["Not Furloughed", "Furloughed"]}
                 indexBy="id"
-                margin={{ top: 50, right: 60, bottom: 100, left: 60 }}
+                margin={{ top: 50, right: 40, bottom: 100, left: 80 }}
                 padding={0.3}
                 valueScale={{ type: 'linear' }}
                 indexScale={{ type: 'band', round: true }}
@@ -113,8 +118,8 @@ export default function MyResponsiveBar({ data }) {
                         anchor: 'bottom',
                         direction: 'row',
                         justify: true,
-                        translateX: 50,
-                        translateY: 80,
+                        translateX: 30,
+                        translateY: 70,
                         itemsSpacing: 10,
                         itemWidth: 100,
                         itemHeight: 0,

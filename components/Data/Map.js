@@ -43,7 +43,7 @@ export default function MapGEO(props) {
         <MapContainer 
         center={[53.64883949245872, -1.7454470467296537]} 
         zoom={6} scrollWheelZoom={false} 
-        style={{ height: "70vh", width: "100%" }}
+        style={{ height: "60vh", width: "100%" }}
          
         >
 

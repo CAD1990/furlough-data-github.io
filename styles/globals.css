@@ -29,13 +29,16 @@ a {
 
 }
 .tab-content{
-  margin-top: 50x;
+padding-top: 0.1px;
   height: 100%;
+  background-color: white;
 
 }
 .graph-body{
   height: 75vh;
-  margin: 20px;
 
 
+}
+.card-header-tabs{
+  margin: 0.5px
 }
