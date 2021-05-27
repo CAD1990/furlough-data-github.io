@@ -5,40 +5,20 @@ import MyResponsiveBar from './BarChart'
 
 export default function FooterTab(props) {
 
-    const tabInfo = [props]
-
-    const renderTabs = (data, index) => {
-
-        const results = [
-            <Tab eventKey={"Eligible"} title={"Overview"}>
-                <div className="graph-body">
-                    <MyResponsiveBar data={data} />
-                </div>
-            </Tab>,
-            <Tab eventKey={"Gender"} title={"Gender"}>
-                <div className="graph-body">
-                    <MyResponsivePie data={data} />
-                </div>
-            </Tab>
-        ]
-
-
-        return (
-
-
-         
-
-            <Tabs defaultActiveKey={"Eligible"} transition={false} id="Tabs-Body">
-                {results}
-            </Tabs>
-
-        )
-    }
-
-
-
     return (
-        
-        <div className="Tab-Body">{tabInfo.map(renderTabs)}</div>
+
+        <div className="Tab-Body">
+            <Tabs key={0} defaultActiveKey={0} transition={false} id="Tabs-Body">
+                <Tab key={0} eventKey={0} title={"Overview"}>
+                    <div className="graph-body">
+                        <MyResponsiveBar data={props} />
+                    </div>
+                </Tab>,
+            <Tab key={1} eventKey={1} title={"Gender"}>
+                    <div className="graph-body">
+                        <MyResponsivePie data={props} />
+                    </div>
+                </Tab>
+            </Tabs></div>
     );
 }

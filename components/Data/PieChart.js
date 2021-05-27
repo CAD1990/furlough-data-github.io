@@ -27,7 +27,7 @@ export default function MyResponsivePie({ data }) {
     }
 
 
-    console.log(json)
+  
 
     const CenteredMetric = ({ dataWithArc, centerX, centerY }) => {
         let total = 0
