@@ -1,12 +1,13 @@
 import { MapContainer, TileLayer, GeoJSON, useMapEvents } from "react-leaflet";
 import 'leaflet/dist/leaflet.css'
 
-export default function MapGEO({ geojson, updateConstituency, auth }) {
+export default function MapGEO({ geojson, setConstituency, auth }) {
+
 
     function onEachConstituency(constituency, layer) {
 
         layer.on({
-            click: (event) => { updateConstituency(constituency), auth(true)}
+            click: (event) => { setConstituency(constituency.properties), auth(true)}
         })
 
 
@@ -41,7 +42,6 @@ export default function MapGEO({ geojson, updateConstituency, auth }) {
             zoom={6} scrollWheelZoom={false}
             style={{ height: "60vh", width: "100%" }}
         >
-
             <GeoJSON data={geojson} onEachFeature={onEachConstituency} attribution="Maps courtesy of ONS, Data courtesy of Parliament" style={style} ></GeoJSON>
 
         </MapContainer>

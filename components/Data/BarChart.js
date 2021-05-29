@@ -12,7 +12,7 @@ export default function MyResponsiveBar({ data }) {
 
     } else {
 
-        const properties = data.props.properties
+        const properties = data.props
 
         const maleNoFurlough = (properties.Eligible["Male"] - properties.Male["Employments Furloughed"])
         const femaleNoFurlough = (properties.Eligible["Female"] - properties.Female["Employments Furloughed"])
@@ -38,7 +38,7 @@ export default function MyResponsiveBar({ data }) {
     }
 
 
-    console.log(json)
+
 
 
 

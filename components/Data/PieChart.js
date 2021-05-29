@@ -6,8 +6,6 @@ export default function MyResponsivePie({ data }) {
 
     const json = []
 
-
-
     if (!data.props) {
         
     } else {
@@ -15,19 +13,15 @@ export default function MyResponsivePie({ data }) {
         json.push(
             {
                 "id": "Female Workers Furloughed",
-                "value": data.props.properties.Female["Employments Furloughed"]
+                "value": data.props.Female["Employments Furloughed"]
             },
             {
                 "id": "Male Workers Furloughed",
-                "value": data.props.properties.Male["Employments Furloughed"]
+                "value": data.props.Male["Employments Furloughed"]
             })
-
-
 
     }
 
-
-  
 
     const CenteredMetric = ({ dataWithArc, centerX, centerY }) => {
         let total = 0

@@ -3,6 +3,8 @@ import { useState } from 'react'
 import FooterTab from '@components/Data/Tabs'
 import dynamic from 'next/dynamic'
 import Title from '@components/Data/Title'
+import React, { Memo } from "react";
+import CardBody from '@components/Data/CardBody'
 
 
 
@@ -13,18 +15,14 @@ export default function Body(props) {
     const [availableData, setAvailableData] = useState(false)
 
 
-    const MapGEO = dynamic(() => import("@components/Data/Map"), {
-        ssr: false
-    });
-
     const setConstituency = (clickedConstituency) => {
 
-        setTabState(clickedConstituency)
+        setTabState(()=>{return clickedConstituency})
 
     }
 
-    const setAuth = () => {
-        setAvailableData(true)
+    const setAuth = (trueFalse) => {
+        setAvailableData(() => { return trueFalse})
     }
 
     function TabAuth() {
@@ -33,22 +31,23 @@ export default function Body(props) {
 
             return <FooterTab props={constituency} />
 
-
-
         }
         else {
-            return <h1>Click a Constituency to find out more</h1>
+            return null
         }
     }
 
     function TitleAuth() {
 
-
+        let title = "Click a constituency to find out more"
         if (availableData) {
-            return <Title props={constituency} />
+            
+            title = constituency.Name
+
+            return <Title title={title} />
         }
         else {
-            return null
+            return <Title title={title} />
         }
     }
 
@@ -56,8 +55,7 @@ export default function Body(props) {
         <div className="body">
             <Card style={{ width: '100%' }}>
                 <TitleAuth />
-                <Card.Body><MapGEO geojson={props.body} updateConstituency={setConstituency} auth={setAuth} /></Card.Body>
-
+                <CardBody props={props.body} updateConstituency={setConstituency} auth={setAuth} />
                 <Card.Footer style={{ height: '100%' }}><TabAuth /></Card.Footer>
 
             </Card>

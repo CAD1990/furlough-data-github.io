@@ -1,22 +1,11 @@
 import Card from 'react-bootstrap/Card'
 
 
-
-
-export default function Title(props) {
-
-    const object = []
-
-   if(!props.props){
-
-   }else{
-       object.push(props.props.properties.Name)
-   }
-    
+export default function Title({title}) {
 
     return (
 
-        <Card.Header><h1>{object}</h1></Card.Header>
+        <Card.Header><h1>{title}</h1></Card.Header>
 
     );
 }
